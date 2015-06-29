@@ -278,24 +278,16 @@ public class MainActivity extends Activity implements OnTimeSetListener,View.OnT
                 }
     }
     
-    private void asyncDeleteAlarm(final Alarm alarm) {
+    private void deleteAlarm(final Alarm alarm) {
         final Context context = MainActivity.this.getApplicationContext();
-        final AsyncTask<Void, Void, Void> deleteTask = new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... parameters) {
-                // Activity may be closed at this point , make sure data is still valid
-                if (context != null && alarm != null) {
-                	 AlarmInstance instance = setupAlarmInstance(context, alarm);
-                     AlarmUtils.cancelAlarmOnQuarterHour(MainActivity.this, instance);
-                    ContentResolver cr = context.getContentResolver();
-                    AlarmUtils.deleteAllInstances(context, alarm.id);
-                    Alarm.deleteAlarm(cr, alarm.id);
-                }
-                return null;
+
+            if (context != null && alarm != null) {
+                ContentResolver cr = context.getContentResolver();
+                AlarmUtils.deleteAllInstances(context, alarm.id);
+                Alarm.deleteAlarm(cr, alarm.id);
             }
-        };
+
         mUndoShowing = true;
-        deleteTask.execute();
     }
     
     private void updateAlarm(final Alarm alarm, final boolean popToast) {
@@ -637,7 +629,7 @@ public class MainActivity extends Activity implements OnTimeSetListener,View.OnT
                 public void onClick(View v) {
                     mDeletedAlarm = alarm;
                     mRepeatChecked.remove(alarm.id);
-                    asyncDeleteAlarm(alarm);
+                    deleteAlarm(alarm);
                 }
             });
 
