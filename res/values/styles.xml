@@ -1,0 +1,51 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <style name="ToastBarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dip</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_marginLeft">4dip</item>
+        <item name="android:layout_marginRight">4dip</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/panel_undo_holo</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:alpha">0</item>
+        <item name="android:clickable">true</item>
+    </style>
+    
+    <style name="no_alarms">
+        <item name="android:textSize">@dimen/alarm_info_font_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="body">
+        <item name="android:textSize">@dimen/body_font_size</item>
+    </style>
+        <style name="labelEditTextStyle">
+        <item name="android:inputType">textCapSentences</item>
+        <item name="android:selectAllOnFocus">true</item>
+    </style>
+
+    <style name="AlarmSwitchTheme"> 
+        <item name="android:thumbTextPadding">12dip</item>  
+        <item name="android:switchPadding">10dip</item>
+    </style>
+</resources>

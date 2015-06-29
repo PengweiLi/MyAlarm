@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android=
+    "http://schemas.android.com/apk/res/android"
+    xmlns:dc="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000" >
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="40dp"
+       android:orientation="vertical"
+       android:layout_gravity="center">
+
+       <com.lipengwei.myalarm.ui.TextTime
+           android:id="@+id/alarm_activity_texttime"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="sans-serif-thin"
+           android:gravity="center_horizontal"
+           android:layout_gravity="center_horizontal"
+           android:textColor="@color/clock_white"
+           android:textSize="100sp"
+           dc:format12Hour="@string/alarm_time_12_hours_format"
+           dc:format24Hour="@string/clock_24_hours_format" />
+       
+       <TextView 
+           android:id="@+id/alarm_info"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_horizontal"
+           android:textSize="50sp"
+           android:textColor="#FFFFFF"/>
+    
+     </LinearLayout>
+     
+      <ImageButton
+        android:id="@+id/button_stop_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/stop_alarm"
+        android:src="@drawable/ic_alarmoff"
+        android:background="#000000"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="200dip"
+        android:onClick="onClick"/>
+</LinearLayout>
